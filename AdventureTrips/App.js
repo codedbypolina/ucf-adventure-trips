@@ -6,7 +6,9 @@ import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
 import { Button, Text } from '@rneui/themed';
 import { View, StyleSheet, TextInput, CheckBox, FlatList, Alert } from 'react-native'
-import Home from "./screens/Home"
+import Home from "./screens/HomeScreen"
+import Categories from './screens/CategoriesScreen';
+import Saved from './screens/SavedScreen';
 
 
 export default function App() {
