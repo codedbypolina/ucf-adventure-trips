@@ -10,11 +10,14 @@ import Home from "./screens/HomeScreen"
 import Categories from './screens/CategoriesScreen';
 import Saved from './screens/SavedScreen';
 
+import Navigation from './components/Navigation';
+
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Home />
+      <Navigation />
+
     </View>
   );
 }
@@ -23,7 +26,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
     justifyContent: 'center',
   },
 });

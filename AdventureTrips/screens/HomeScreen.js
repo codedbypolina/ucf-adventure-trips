@@ -1,9 +1,9 @@
 import { View, Text, StyleSheet, TextInput, CheckBox, FlatList, Alert } from 'react-native'
 
 
-export default function Home() {
+export default function Home({ navigation }) {
     return (
-        <View>
+        <View style={styles.screen}>
             <View style={styles.header}>
                 <Text style={styles.h1}>Hi Polina!</Text>
                 <Text style={styles.h1}>Explore Our Upcoming Trips</Text>
@@ -23,10 +23,10 @@ export default function Home() {
 }
 
 const styles = StyleSheet.create({
+
     header: {
         marginBottom: 30,
-        flex: 1,
-        alignItems: "center"
+        textAlign: "center"
     },
     h1: {
         fontWeight: 700,
