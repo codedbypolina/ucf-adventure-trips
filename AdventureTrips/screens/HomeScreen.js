@@ -1,5 +1,4 @@
 import { View, Text, StyleSheet, TextInput, CheckBox, FlatList, Image } from 'react-native'
-import homeLogo from "../images/home.png"
 import Card from "../components/Card"
 
 export default function Home({ navigation }) {
@@ -11,7 +10,7 @@ export default function Home({ navigation }) {
             <View style={styles.header}>
                 <Text style={styles.h1}>Hi Polina!</Text>
                 <Text style={styles.h1}>Explore Our Upcoming Trips</Text>
-                <Image source={require('../images/home.png')} />
+
             </View>
 
 

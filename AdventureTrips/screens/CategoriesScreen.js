@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, TextInput, CheckBox, FlatList, Alert } from 're
 export default function Categories({ navigation }) {
     return (
         <View>
-            <Text>This is Categories Screen</Text>
+            This is Categories Screen
         </View>
     )
 }
