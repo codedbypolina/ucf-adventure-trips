@@ -7,6 +7,8 @@ import { NavigationContainer } from '@react-navigation/native';
 
 import homeLogo from "../images/home.png"
 
+import FontAwesome from "@expo/vector-icons/FontAwesome"
+
 import HomeScreen from "../screens/HomeScreen"
 import Saved from "../screens/SavedScreen"
 import Categories from '../screens/CategoriesScreen'
@@ -35,9 +37,7 @@ const Navigation = () => {
                     options={{
                         tabBarIcon: ({ focused }) => (
                             <View>
-                                <Image
-                                    source={require}
-                                    resizeMode="contain" />
+                                <FontAwesome name="home" size={25} color="#FFCA00" style={{ alignSelf: "center" }} />
                                 <Text style={{ color: "#FFCA00", textDecoration: focused ? "underline" : "none" }}>Home</Text>
                             </View>
                         )
@@ -45,9 +45,7 @@ const Navigation = () => {
                 <Tab.Screen name="Categories" component={Categories} options={{
                     tabBarIcon: ({ focused }) => (
                         <View>
-                            <Image
-                                source={homeLogo}
-                                resizeMode="contain" />
+                            <FontAwesome name="align-justify" size={25} color="#FFCA00" style={{ alignSelf: "center" }} />
                             <Text style={{ color: "#FFCA00", textDecoration: focused ? "underline" : "none" }}>Categories</Text>
                         </View>
                     )
@@ -55,9 +53,7 @@ const Navigation = () => {
                 <Tab.Screen name="Saved" component={Saved} options={{
                     tabBarIcon: ({ focused }) => (
                         <View>
-                            <Image
-                                source={homeLogo}
-                                resizeMode="contain" />
+                            <FontAwesome name="heart" size={25} color="#FFCA00" style={{ alignSelf: "center" }} />
                             <Text style={{ color: "#FFCA00", textDecoration: focused ? "underline" : "none" }}>Saved</Text>
                         </View>
                     )
