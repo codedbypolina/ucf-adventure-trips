@@ -1,12 +1,17 @@
-import { View, Text, StyleSheet, TextInput, CheckBox, FlatList, Alert } from 'react-native'
+import { View, Text, StyleSheet, TextInput, CheckBox, FlatList, Image } from 'react-native'
+import homeLogo from "../images/home.png"
 
 
 export default function Home({ navigation }) {
     return (
         <View style={styles.screen}>
+
+
+
             <View style={styles.header}>
                 <Text style={styles.h1}>Hi Polina!</Text>
                 <Text style={styles.h1}>Explore Our Upcoming Trips</Text>
+                <Image source={require('../images/home.png')} />
             </View>
 
 
