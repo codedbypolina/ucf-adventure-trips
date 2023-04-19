@@ -1,21 +1,16 @@
-import { View, Text, StyleSheet, TextInput, CheckBox, FlatList, Alert, Image } from 'react-native'
-//import { NavigationContainer } from '@react-navigation/native'
+import { View, Text } from 'react-native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 
 import { NavigationContainer } from '@react-navigation/native';
-//import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import homeLogo from "../images/home.png"
 
 import FontAwesome from "@expo/vector-icons/FontAwesome"
 
 import HomeScreen from "../screens/HomeScreen"
 import Saved from "../screens/SavedScreen"
 import Categories from '../screens/CategoriesScreen'
-import { color } from 'react-native-reanimated';
 
 const Tab = createBottomTabNavigator()
-//const Stack = createNativeStackNavigator();
 
 const Navigation = () => {
     return (
@@ -64,31 +59,3 @@ const Navigation = () => {
 }
 export default Navigation;
 
-/*
-export default function Navigation() {
-    return (
-        <NavigationContainer>
-            <Tab.Navigator
-                initialRouteName='Home'
-                tabBarOptions={{
-                    showlabel: false,
-                    style: {
-                        backgroundColor: "black"
-
-                    }
-                }}
-            >
-                <Tab.Screen name="Home"
-                    component={HomeScreen}
-                    options={{
-                        tabBarIcon: () => (
-                            <Image source={homeLogo} />
-                        ),
-                    }} />
-                <Tab.Screen name="Categories" component={Categories} />
-                <Tab.Screen name="Saved" component={Saved} />
-            </Tab.Navigator>
-        </NavigationContainer >
-    )
-}
-*/
