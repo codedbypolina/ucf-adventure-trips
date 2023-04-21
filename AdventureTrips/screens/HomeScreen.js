@@ -2,8 +2,7 @@ import { View, Text, StyleSheet, TextInput, CheckBox, FlatList, Image, ScrollVie
 import Card from "../components/Card"
 import data from "../data"
 import { createStackNavigator } from '@react-navigation/stack';
-import DescriptionScreen from './DescriptionScreen';
-import Navigation from '../components/Navigation';
+
 
 
 export default function Home({ navigation }) {
