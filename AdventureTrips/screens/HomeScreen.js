@@ -1,7 +1,14 @@
 import { View, Text, StyleSheet, TextInput, CheckBox, FlatList, Image } from 'react-native'
 import Card from "../components/Card"
+import data from "../data"
 
 export default function Home({ navigation }) {
+    const card = data.map(item => (<Card
+        key={item.id}
+        item={item}
+
+    />))
+
     return (
         <View style={styles.screen}>
 
@@ -18,7 +25,7 @@ export default function Home({ navigation }) {
             <View>Categories Component</View>
 
             <Text style={styles.h2}>Open Registration</Text>
-            <View style={styles.registration}><Card /></View>
+            <View style={styles.registration}>{card}</View>
 
             <Text style={styles.h2}>Upcoming Trips</Text>
             <View>Card Component</View>

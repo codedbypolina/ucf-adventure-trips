@@ -1,16 +1,18 @@
 import { View, Text, StyleSheet, TextInput, CheckBox, FlatList, Image } from 'react-native'
-import caving from "../images/caving.png"
 
 export default function Card(props) {
+    console.log(props)
+    const item = props.item
+    console.log(item.image)
     return (
         <View style={styles.card} >
             <View style={styles.info}>
-                <img src={caving} style={styles.image} />
+                <img style={styles.image} src={item.image} width="320"></img>
                 <View style={styles.description}>
-                    <Text style={styles.infoTitle}>Caving and Camping</Text>
-                    <Text style={styles.infoText}>🗓 6/14/23-6/16/23</Text>
-                    <Text style={styles.infoText}>📍 Tumbling Rock Cave, AL</Text>
-                    <Text style={styles.infoText}>🏕 Overnight Trip</Text>
+                    <Text style={styles.infoTitle}>{item.title}</Text>
+                    <Text style={styles.infoText}>🗓 {item.date}</Text>
+                    <Text style={styles.infoText}>📍 {item.location}</Text>
+                    <Text style={styles.infoText}>🏕 {item.type}</Text>
                 </View>
             </View>
         </View>

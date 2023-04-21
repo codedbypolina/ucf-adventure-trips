@@ -1,6 +1,8 @@
+import caving from "./images/caving.png"
 const data = [
     {
         title: "Orlando Geocaching",
+        image: "https://iili.io/HvDgFiF.md.png",
         date: "01/14/2023",
         location: "UCF Arboretum",
         type: "Day Trip",
@@ -10,10 +12,13 @@ const data = [
         cost: 5,
         regOpen: "01/03/2023, 12PM",
         regClosed: "01/11/2023, 5PM",
-        preTrip: "01/11/2023, 6PM"
+        preTrip: "01/11/2023, 6PM",
+        id: 1
+
     },
     {
         title: "Caving and Camping",
+        image: "https://iili.io/HvD4awl.md.jpg",
         date: "01/14/2023 - 01/16/2023",
         location: "Tumbling Rock Cave, AL",
         type: "Overnight Trip",
@@ -23,7 +28,8 @@ const data = [
         cost: 50,
         regOpen: "01/03/2023, 12PM",
         regClosed: "01/10/2023, 5PM",
-        preTrip: "01/10/2023, 6PM"
+        preTrip: "01/10/2023, 6PM",
+        id: 2
     }
 
 ]
