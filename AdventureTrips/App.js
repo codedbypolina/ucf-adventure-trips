@@ -6,17 +6,19 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 
-// importing FontAwesome for Icons
-import FontAwesome from "@expo/vector-icons/FontAwesome"
-
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator()
 
+// importing FontAwesome for Icons
+import FontAwesome from "@expo/vector-icons/FontAwesome"
+
+// importing screens
 import Home from "./screens/HomeScreen"
 import Categories from './screens/CategoriesScreen';
 import Saved from './screens/SavedScreen';
 import DescriptionScreen from './screens/DescriptionScreen';
 
+// Main Navigation
 function MainStack() {
   return (
     <Stack.Navigator initialRouteName='Home'>
@@ -26,6 +28,7 @@ function MainStack() {
   );
 }
 
+// Bottom Navigation
 function TabNavigator() {
   return (
     <Tab.Navigator
@@ -69,6 +72,7 @@ function TabNavigator() {
   );
 }
 
+// App function
 export default function App() {
   return (
     <NavigationContainer>
@@ -77,6 +81,7 @@ export default function App() {
   );
 }
 
+// Styling
 const styles = StyleSheet.create({
   container: {
     flex: 1,
