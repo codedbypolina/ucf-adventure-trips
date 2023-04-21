@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, TextInput, CheckBox, FlatList, Image } from 'react-native'
+import { View, Text, StyleSheet, TextInput, CheckBox, FlatList, Image, ScrollView } from 'react-native'
 import Card from "../components/Card"
 import data from "../data"
 
@@ -25,7 +25,7 @@ export default function Home({ navigation }) {
             <View>Categories Component</View>
 
             <Text style={styles.h2}>Open Registration</Text>
-            <View style={styles.registration}>{card}</View>
+            <ScrollView horizontal={true} style={styles.registration}>{card}</ScrollView>
 
             <Text style={styles.h2}>Upcoming Trips</Text>
             <View>Card Component</View>

@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, TextInput, CheckBox, FlatList, Image } from 'react-native'
+import { View, Text, StyleSheet, TextInput, CheckBox, FlatList, Image, ScrollView } from 'react-native'
 
 export default function Card(props) {
     console.log(props)
