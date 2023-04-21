@@ -2,9 +2,13 @@ import { View, Text } from 'react-native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 
 import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
 
 import FontAwesome from "@expo/vector-icons/FontAwesome"
+
+//import DescriptionScreen from './screens/DescriptionScreen';
+
 
 import HomeScreen from "../screens/HomeScreen"
 import Saved from "../screens/SavedScreen"
@@ -13,9 +17,11 @@ import Categories from '../screens/CategoriesScreen'
 const Tab = createBottomTabNavigator()
 
 const Navigation = () => {
+
     return (
-        <NavigationContainer>
-            <Tab.Navigator
+        <NavigationContainer >
+
+            < Tab.Navigator
                 tabBarOptions={{
                     showLabel: false,
                     activeBackgroundColor: "#1E1E1E",
@@ -26,7 +32,8 @@ const Navigation = () => {
                         fontSize: 15
                     },
 
-                }}
+                }
+                }
             >
                 <Tab.Screen name="Home" component={HomeScreen}
                     options={{
@@ -53,8 +60,8 @@ const Navigation = () => {
                         </View>
                     )
                 }} />
-            </Tab.Navigator>
-        </NavigationContainer>
+            </Tab.Navigator >
+        </NavigationContainer >
     )
 }
 export default Navigation;

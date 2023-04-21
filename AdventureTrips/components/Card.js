@@ -1,11 +1,16 @@
 import { View, Text, StyleSheet, TextInput, CheckBox, FlatList, Image, ScrollView } from 'react-native'
+import { TouchableOpacity } from 'react-native-gesture-handler'
+import { useNavigation } from '@react-navigation/native';
+
+
 
 export default function Card(props) {
-    console.log(props)
+    const navigation = useNavigation();
     const item = props.item
-    console.log(item.image)
+    //console.log(props)
+    //console.log(item.image)
     return (
-        <View style={styles.card} >
+        <TouchableOpacity style={styles.card} onPress={() => navigation.navigate('Description')}>
             <View style={styles.info}>
                 <img style={styles.image} src={item.image} width="320"></img>
                 <View style={styles.description}>
@@ -15,7 +20,7 @@ export default function Card(props) {
                     <Text style={styles.infoText}>🏕 {item.type}</Text>
                 </View>
             </View>
-        </View>
+        </TouchableOpacity>
     )
 }
 
