@@ -1,8 +1,9 @@
 import { View, Text, StyleSheet, TextInput, CheckBox, FlatList, Image, ScrollView } from 'react-native'
 import Card from "../components/Card"
 import data from "../data"
+import categories from "../categoryData"
 import { createStackNavigator } from '@react-navigation/stack';
-
+import Category from '../components/Category';
 
 
 export default function Home({ navigation }) {
@@ -11,9 +12,15 @@ export default function Home({ navigation }) {
         item={item}
 
     />))
+
+    const category = categories.map(category => (<Category
+        category={category}
+
+    />))
     const Stack = createStackNavigator();
 
-    console.log(card[0].props)
+    //console.log(card[0].props)
+    //console.log(category)
 
     return (
 
@@ -32,7 +39,7 @@ export default function Home({ navigation }) {
 
 
             <Text style={styles.h2}>Categories</Text>
-            <View style={styles.categories}> <Text style={styles.emoji}>🚣‍♀️</Text> <Text style={styles.activity}>Water Activities</Text></View>
+            <ScrollView horizontal={true}>{category}</ScrollView>
 
             <Text style={styles.h2}>Open Registration</Text>
             <ScrollView horizontal={true} style={styles.registration}>{card}</ScrollView>

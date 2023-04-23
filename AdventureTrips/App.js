@@ -15,6 +15,7 @@ import FontAwesome from "@expo/vector-icons/FontAwesome"
 // importing screens
 import Home from "./screens/HomeScreen"
 import Categories from './screens/CategoriesScreen';
+import Category from "./screens/CategoryScreen";
 import Saved from './screens/SavedScreen';
 import DescriptionScreen from './screens/DescriptionScreen';
 
@@ -24,6 +25,8 @@ function MainStack() {
     <Stack.Navigator initialRouteName='Home'>
       <Stack.Screen name="Home" component={Home} />
       <Stack.Screen name="Description" component={DescriptionScreen} />
+      <Stack.Screen name="Category" component={Category} />
+
     </Stack.Navigator>
   );
 }
