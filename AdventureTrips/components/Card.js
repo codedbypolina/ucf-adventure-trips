@@ -10,7 +10,7 @@ export default function Card(props) {
     //console.log(props)
     //console.log(item.image)
     return (
-        <TouchableOpacity style={styles.card} onPress={() => navigation.navigate('Description')}>
+        <TouchableOpacity style={styles.card} onPress={() => navigation.navigate('Description', { item })}>
             <View style={styles.info}>
                 <img style={styles.image} src={item.image} width="320"></img>
                 <View style={styles.description}>

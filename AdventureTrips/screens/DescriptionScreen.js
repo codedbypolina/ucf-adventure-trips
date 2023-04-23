@@ -1,22 +1,28 @@
-import { View, Text, StyleSheet, TextInput, CheckBox, FlatList, Image, ScrollView } from 'react-native'
-import { useNavigation } from '@react-navigation/native';
+import { View, Text, StyleSheet, FlatList, Image, ScrollView } from 'react-native'
+import { useRoute } from '@react-navigation/native';
 
 
-export default function DescriptionScreen({ route }) {
+export default function DescriptionScreen() {
+
+    const route = useRoute();
+    console.log(route)
+    console.log(route.params)
+
+    const item = route.params.item
     return (
         <ScrollView>
-            <img src="https://iili.io/HvDgFiF.md.png" />
+            <img src={item.image} />
             <View style={styles.main}>
-                <Text style={styles.title}>Caving and Camping</Text>
+                <Text style={styles.title}>{item.title}</Text>
                 <View style={styles.information}>
-                    <Text style={styles.text}>🗓 <span style={styles.bold}>Date:</span> 6/14/23-6/16/23⁣</Text>
-                    <Text style={styles.text}>📍 <span style={styles.bold}>Location:</span> Tumbling Rock Cave, AL</Text>
-                    <Text style={styles.text}>💵 <span style={styles.bold}>Trip Cost:</span> $50</Text>
-                    <Text style={styles.text}>📲 <span style={styles.bold}>Registration Opens:</span> 6/1/23, 12PM</Text>
-                    <Text style={styles.text}>🚫 <span style={styles.bold}>Registration Closes:</span> 6/2/23, 5PM</Text>
+                    <Text style={styles.text}>🗓 <span style={styles.bold}>Date:</span> {item.date}⁣</Text>
+                    <Text style={styles.text}>📍 <span style={styles.bold}>Location:</span> {item.location}</Text>
+                    <Text style={styles.text}>💵 <span style={styles.bold}>Trip Cost:</span> ${item.cost}</Text>
+                    <Text style={styles.text}>📲 <span style={styles.bold}>Registration Opens:</span> {item.regOpen}</Text>
+                    <Text style={styles.text}>🚫 <span style={styles.bold}>Registration Closes:</span> {item.regClosed}</Text>
                 </View>
                 <Text style={styles.h2}>Trip Description</Text>
-                <Text style={styles.p}>Lorem ipsum dolor sit amet consectetur. Ullamcorper dui posuere amet dictumst. Eleifend nisl nibh cras tristique congue in fringilla accumsan cursus. Ac nisi justo enim faucibus elit id non varius. Pellentesque dui proin molestie interdum mattis.</Text>
+                <Text style={styles.p}>{item.description}</Text>
                 <Text style={styles.h2}>What’s included:</Text>
                 <Text style={styles.p}>Lorem ipsum dolor sit amet consectetur. Ullamcorper dui posuere amet dictumst. Eleifend nisl nibh cras tristique congue in fringilla accumsan cursus. Ac nisi justo enim faucibus elit id non varius. Pellentesque dui proin molestie interdum mattis.</Text>
                 <Text style={styles.p}>Trip Leaders: </Text>

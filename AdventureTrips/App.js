@@ -22,7 +22,7 @@ import DescriptionScreen from './screens/DescriptionScreen';
 function MainStack() {
   return (
     <Stack.Navigator initialRouteName='Home'>
-      <Stack.Screen name="Home" component={DescriptionScreen} />
+      <Stack.Screen name="Home" component={Home} />
       <Stack.Screen name="Description" component={DescriptionScreen} />
     </Stack.Navigator>
   );
