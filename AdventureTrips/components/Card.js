@@ -8,23 +8,14 @@ import { useState } from "react";
 export default function Card(props) {
     const navigation = useNavigation();
     const item = props.item
-    //console.log(props)
-    //console.log(item.image)
-    console.log(item)
-
-    const [savedTrips, setSavedTrips] = useState([]);
-
     const [isSaved, setIsSaved] = useState(item.saved);
 
     function toggleSave() {
-        if (isSaved) {
-            setSavedTrips(savedTrips.filter(trip => trip.id !== item.id));
-            setIsSaved(false);
-        } else {
-            setSavedTrips([...savedTrips, item]);
-            setIsSaved(true);
-        }
+        props.toggleSave(item.id);
+        setIsSaved(!isSaved);
     }
+
+    console.log(item)
 
     return (
         <View style={styles.card} >
@@ -57,6 +48,7 @@ const styles = StyleSheet.create({
 
     image: {
         width: 230,
+        height: 180,
         borderRadius: 5,
 
     },

@@ -13,30 +13,35 @@ import FontAwesome from "@expo/vector-icons/FontAwesome"
 
 export default function Home({ navigation }) {
 
+    const [dataset, setData] = useState(data);
 
-    const card = data.map(item => (<Card
-        key={item.id}
-        item={item}
+    function toggleSave(id) {
+        const newData = dataset.map((item) => {
+            if (item.id === id) {
+                return { ...item, saved: !item.saved };
+            }
+            return item;
+        });
+        setData(newData);
+    }
 
-    />))
+    const card = dataset.map((item) => (
+        <Card key={item.id} item={item} toggleSave={toggleSave} />
+    ));
 
-    const savedCards = data.filter((trip) => trip.saved).map((trip) => <Card key={trip.id} item={trip} />);
 
 
+    const savedCards = data.filter((trip) => trip.saved).map((trip) => <Card key={trip.id} item={trip} toggleSave={toggleSave} />);
 
 
     let [filter, setFilter] = useState("");
-
 
 
     const category = categories.map(category => (<Category
         category={category}
 
     />))
-    const Stack = createStackNavigator();
 
-    //console.log(card[0].props)
-    //console.log(category)
 
     return (
 
@@ -71,7 +76,7 @@ export default function Home({ navigation }) {
             <ScrollView horizontal={true} style={styles.registration}>{card}</ScrollView>
 
             <Text style={styles.h2}>Saved Trips</Text>
-            <View>{savedCards}</View>
+            <ScrollView horizontal={true}>{savedCards}</ScrollView>
         </ScrollView>
     )
 }

@@ -19,7 +19,7 @@ export default function Category({ navigation }) {
 
     //console.log(card[0].props.item.type)
     function activity() {
-        for (let i = 0; i < 3; ++i) {
+        for (let i = 0; i < 7; ++i) {
             console.log(card[i].props.item.type)
             console.log(category.activityName)
             if (card[i].props.item.type == category.activityName) {
