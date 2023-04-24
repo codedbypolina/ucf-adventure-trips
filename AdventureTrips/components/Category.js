@@ -7,7 +7,7 @@ export default function Category(props) {
     const navigation = useNavigation();
 
     return (
-        <TouchableOpacity style={styles.categories} onPress={() => navigation.navigate('Category')}>
+        <TouchableOpacity style={styles.categories} onPress={() => navigation.navigate('Category', { category })}>
             <Text style={styles.emoji}>{category.emoji}</Text><Text style={styles.activity}> {category.activityName}</Text>
         </TouchableOpacity>
     )

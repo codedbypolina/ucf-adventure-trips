@@ -39,13 +39,11 @@ export default function Home({ navigation }) {
 
 
             <Text style={styles.h2}>Categories</Text>
-            <ScrollView horizontal={true}>{category}</ScrollView>
-
-            <Text style={styles.h2}>Open Registration</Text>
-            <ScrollView horizontal={true} style={styles.registration}>{card}</ScrollView>
+            <ScrollView horizontal={true} style={styles.categories}>{category}</ScrollView>
 
             <Text style={styles.h2}>Upcoming Trips</Text>
-            <View>Card Component</View>
+            <ScrollView horizontal={true} style={styles.registration}>{card}</ScrollView>
+
         </View>
     )
 }
@@ -57,12 +55,7 @@ const styles = StyleSheet.create({
         textAlign: "center"
     },
     categories: {
-        backgroundColor: "#E6E5E8",
-        width: "fit-content",
-        padding: 10,
-        margin: 10,
-        borderRadius: 12,
-        display: "inline",
+        marginVertical: 20
 
     },
     h1: {
@@ -72,7 +65,8 @@ const styles = StyleSheet.create({
     },
     h2: {
         fontWeight: 500,
-        fontSize: 20
+        fontSize: 20,
+        marginTop: 10
     },
     screen: {
 

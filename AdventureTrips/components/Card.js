@@ -17,7 +17,7 @@ export default function Card(props) {
                     <Text style={styles.infoTitle}>{item.title}</Text>
                     <Text style={styles.infoText}>🗓 {item.date}</Text>
                     <Text style={styles.infoText}>📍 {item.location}</Text>
-                    <Text style={styles.infoText}>🏕 {item.type}</Text>
+                    <Text style={styles.infoText}>{item.emoji} {item.type}</Text>
                 </View>
             </View>
         </TouchableOpacity>
