@@ -1,6 +1,7 @@
 import { View, Text, StyleSheet } from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import { useNavigation } from '@react-navigation/native';
+import { useState } from "react";
 
 
 
@@ -9,8 +10,24 @@ export default function Card(props) {
     const item = props.item
     //console.log(props)
     //console.log(item.image)
+    console.log(item)
+
+    const [savedTrips, setSavedTrips] = useState([]);
+
+    const [isSaved, setIsSaved] = useState(item.saved);
+
+    function toggleSave() {
+        if (isSaved) {
+            setSavedTrips(savedTrips.filter(trip => trip.id !== item.id));
+            setIsSaved(false);
+        } else {
+            setSavedTrips([...savedTrips, item]);
+            setIsSaved(true);
+        }
+    }
+
     return (
-        <TouchableOpacity style={styles.card} onPress={() => navigation.navigate('Description', { item })}>
+        <View style={styles.card} >
             <View style={styles.info}>
                 <img style={styles.image} src={item.image} width="320"></img>
                 <View style={styles.description}>
@@ -19,8 +36,20 @@ export default function Card(props) {
                     <Text style={styles.infoText}>📍 {item.location}</Text>
                     <Text style={styles.infoText}>{item.emoji} {item.type}</Text>
                 </View>
+                <View style={styles.buttons}>
+                    <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Description', { item })}>
+                        <Text style={styles.buttonText}>
+                            Read more...
+                        </Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.button} onPress={toggleSave}>
+                        <Text style={styles.buttonText}>
+                            {isSaved ? 'Remove from saved' : 'Save trip'}
+                        </Text>
+                    </TouchableOpacity>
+                </View>
             </View>
-        </TouchableOpacity>
+        </View>
     )
 }
 
@@ -52,5 +81,14 @@ const styles = StyleSheet.create({
     description: {
         marginLeft: 5,
         marginTop: 10
+    },
+    buttonText: {
+        fontWeight: "bold",
+        fontSize: 15,
+        marginVertical: 5,
+        fontStyles: "italic",
+    },
+    buttons: {
+        marginLeft: 15
     }
 });

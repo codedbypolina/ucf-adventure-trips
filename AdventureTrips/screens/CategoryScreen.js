@@ -39,6 +39,7 @@ export default function Category({ navigation }) {
             </View>
             <View>
                 {activity()}
+
             </View>
         </View>
     )
