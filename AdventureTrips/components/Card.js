@@ -17,6 +17,7 @@ export default function Card(props) {
     const navigation = useNavigation();
 
     const item = props.item
+    console.log(item)
 
     // useState and function to change the state of saved parameter
     const [isSaved, setIsSaved] = useState(item.saved);

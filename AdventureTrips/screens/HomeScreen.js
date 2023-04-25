@@ -1,7 +1,7 @@
 // This is the main screen. It displays search bar (that unfortunately
 // doesn't work), list of categories, upcoming trips and saved trips
 
-import { View, Text, StyleSheet, TextInput, CheckBox, FlatList, Image, ScrollView } from 'react-native'
+import { View, Text, StyleSheet, TextInput, ScrollView } from 'react-native'
 import { useState } from "react";
 
 
@@ -39,7 +39,6 @@ export default function Home() {
         <Card key={item.id} item={item} toggleSave={toggleSave} />
     ));
 
-
     // displaying each card that has true value in saved parameter
     const savedCards = data.filter((trip) => trip.saved).map((trip) => <Card key={trip.id} item={trip} toggleSave={toggleSave} />);
 
@@ -60,7 +59,6 @@ export default function Home() {
         <ScrollView style={styles.screen}>
 
             <View style={styles.header}>
-                <Text style={styles.h1}>Hi Polina!</Text>
                 <Text style={styles.h1}>Explore Our Upcoming Trips</Text>
             </View>
 

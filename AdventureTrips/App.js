@@ -1,3 +1,15 @@
+/*
+For this project I decided to use Option #2: 
+Create a new React Native project with three (3) NEW components and at least 3 screens in an independent repository.
+The THREE components should be used at least TWICE (2 times) across the application with different parameters or route data
+(e.g. parameters, route params, etc). At least one state should be manipulated in a component (no static text or images or elements).
+Each component must also contain some user interface element that changes the state in some way.
+
+Link to GitHub: https://github.com/codedbypolina/ucf-adventure-trips
+Link to Portfolio to view app: https://www.codedbypolina.com/
+*/
+
+
 /* App.js is mostly used for navigation. I needed to nest navigation
 inside of another navigation in order to have bottom nav
 and navigate from one screen to another
