@@ -1,3 +1,5 @@
+// data that keeps all of the information about trips
+
 const data = [
     {
         title: "Orlando Geocaching",

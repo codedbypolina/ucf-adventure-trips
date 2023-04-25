@@ -1,20 +1,29 @@
+// This is the main screen. It displays search bar (that unfortunately
+// doesn't work), list of categories, upcoming trips and saved trips
+
 import { View, Text, StyleSheet, TextInput, CheckBox, FlatList, Image, ScrollView } from 'react-native'
-import Card from "../components/Card"
+import { useState } from "react";
+
+
+// importing data sets
 import data from "../data"
 import categories from "../categoryData"
-import { createStackNavigator } from '@react-navigation/stack';
+
+// importing components
 import Category from '../components/Category';
-import { useState } from "react";
+import Card from "../components/Card"
 
 // importing FontAwesome for Icons
 import FontAwesome from "@expo/vector-icons/FontAwesome"
 
 
 
-export default function Home({ navigation }) {
+export default function Home() {
 
+    // Creating useState to manipulate data
     const [dataset, setData] = useState(data);
 
+    // toggleSave function changes saved parameter in data file from true to false and vice versa
     function toggleSave(id) {
         const newData = dataset.map((item) => {
             if (item.id === id) {
@@ -25,18 +34,19 @@ export default function Home({ navigation }) {
         setData(newData);
     }
 
+    // displaying each card
     const card = dataset.map((item) => (
         <Card key={item.id} item={item} toggleSave={toggleSave} />
     ));
 
 
-
+    // displaying each card that has true value in saved parameter
     const savedCards = data.filter((trip) => trip.saved).map((trip) => <Card key={trip.id} item={trip} toggleSave={toggleSave} />);
 
-
+    // my attempt in creating search box
     let [filter, setFilter] = useState("");
 
-
+    // displaying each category from Category component
     const category = categories.map(category => (<Category
         category={category}
 
@@ -48,9 +58,6 @@ export default function Home({ navigation }) {
 
 
         <ScrollView style={styles.screen}>
-
-
-
 
             <View style={styles.header}>
                 <Text style={styles.h1}>Hi Polina!</Text>
@@ -81,6 +88,7 @@ export default function Home({ navigation }) {
     )
 }
 
+// styling
 const styles = StyleSheet.create({
 
     header: {

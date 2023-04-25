@@ -1,21 +1,29 @@
+/*
+Card component is one of the most used
+components in this project. It displays overview 
+information about the trip, allowing the user to read
+more about the trip or save it
+*/
+
 import { View, Text, StyleSheet } from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import { useNavigation } from '@react-navigation/native';
 import { useState } from "react";
 
-
-
+// component accepts props in order to showcase appropriate information
 export default function Card(props) {
-    const navigation = useNavigation();
-    const item = props.item
-    const [isSaved, setIsSaved] = useState(item.saved);
 
+    // navigation is used to navigate to a different screen
+    const navigation = useNavigation();
+
+    const item = props.item
+
+    // useState and function to change the state of saved parameter
+    const [isSaved, setIsSaved] = useState(item.saved);
     function toggleSave() {
         props.toggleSave(item.id);
         setIsSaved(!isSaved);
     }
-
-    console.log(item)
 
     return (
         <View style={styles.card} >
@@ -44,6 +52,7 @@ export default function Card(props) {
     )
 }
 
+// styling
 const styles = StyleSheet.create({
 
     image: {

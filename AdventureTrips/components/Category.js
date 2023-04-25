@@ -1,9 +1,19 @@
-import { View, Text, StyleSheet } from 'react-native'
+/*
+Category component displays a list of categories
+(taken from categoryData.js). Once clicked on the 
+category, user is being navigated to Category screen 
+that lists all trips under this category
+*/
+
+import { Text, StyleSheet } from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import { useNavigation } from '@react-navigation/native';
 
+// component accepts props in order to showcase appropriate information
 export default function Category(props) {
     const category = props.category
+
+    // navigation is used to navigate to a different screen
     const navigation = useNavigation();
 
     return (
@@ -13,6 +23,7 @@ export default function Category(props) {
     )
 }
 
+// styling
 const styles = StyleSheet.create({
 
     categories: {

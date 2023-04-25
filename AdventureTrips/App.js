@@ -1,5 +1,9 @@
+/* App.js is mostly used for navigation. I needed to nest navigation
+inside of another navigation in order to have bottom nav
+and navigate from one screen to another
+*/
 import * as React from 'react';
-import { View, StyleSheet, TextInput, CheckBox, FlatList, Image, Text } from 'react-native'
+import { View, StyleSheet, Text } from 'react-native'
 
 // Importing components/functions for navigation
 import { NavigationContainer } from '@react-navigation/native';

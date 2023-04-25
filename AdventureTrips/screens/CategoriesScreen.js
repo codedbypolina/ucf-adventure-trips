@@ -1,9 +1,16 @@
-import { View, Text, StyleSheet, TextInput, CheckBox, FlatList, Alert } from 'react-native'
+// This screen simply displays a list of available categories
+// It is the screen the user is navigated to when clicks
+// on categores tab at the bottom of the app
+
+import { View, Text, StyleSheet } from 'react-native'
+
+// importing components and data
 import Category from "../components/Category"
 import categories from "../categoryData"
 
 
-export default function Categories({ navigation }) {
+// displaying all categories from categoryData
+export default function Categories() {
     const category = categories.map(category => (<Category
         category={category}
 
@@ -18,6 +25,7 @@ export default function Categories({ navigation }) {
     )
 }
 
+// styling
 const styles = StyleSheet.create({
 
     header: {

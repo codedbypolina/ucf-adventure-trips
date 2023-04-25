@@ -1,3 +1,8 @@
+// This screen displays all of the trips that have been saved. 
+// While "Save trip" button does turn saved parameter in data.js to true,
+// it still doesn't display the trip into the saved screen :(
+
+
 import { View, Text, StyleSheet, TextInput, CheckBox, FlatList, Alert } from 'react-native'
 import data from "../data"
 import Card from "../components/Card"
@@ -9,6 +14,7 @@ import { ScrollView } from 'react-native-gesture-handler';
 export default function Saved({ navigation }) {
     const [dataset, setData] = useState(data);
 
+    // function that changes saved parameter in data file from true to false and vice versa
     function toggleSave(id) {
         const newData = dataset.map((item) => {
             if (item.id === id) {
@@ -19,6 +25,7 @@ export default function Saved({ navigation }) {
         setData(newData);
     }
 
+    // displaying all cards that have been saved
     const savedCards = data.filter((trip) => trip.saved).map((trip) => <Card key={trip.id} item={trip} toggleSave={toggleSave} />);
 
     return (
@@ -29,6 +36,7 @@ export default function Saved({ navigation }) {
     )
 }
 
+// styling
 const styles = StyleSheet.create({
 
     header: {

@@ -1,3 +1,5 @@
+// data that lists categories
+
 const categories = [
     {
         id: 1,

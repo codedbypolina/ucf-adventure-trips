@@ -1,12 +1,14 @@
-import { View, Text, StyleSheet, FlatList, Image, ScrollView } from 'react-native'
+// This is the screen that displays all of the information
+// about an individual trip. This screen is accessed through
+// clicking "Read more..."
+
+import { View, Text, StyleSheet, ScrollView } from 'react-native'
 import { useRoute } from '@react-navigation/native';
 
 
 export default function DescriptionScreen() {
 
     const route = useRoute();
-    console.log(route)
-    console.log(route.params)
 
     const item = route.params.item
     return (
@@ -31,7 +33,7 @@ export default function DescriptionScreen() {
     )
 }
 
-
+// styling
 const styles = StyleSheet.create({
 
     main: {

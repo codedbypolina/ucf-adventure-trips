@@ -1,35 +1,39 @@
+// This screen displays individual screen that displays
+// all trips available in that category. This screen is
+// available when user clicks on one of the categories 
+// either in the home screen or categories screen
+
 import { View, Text, StyleSheet } from 'react-native'
 import { useRoute } from '@react-navigation/native';
+
+// importing components and data
 import data from "../data"
 import Card from "../components/Card"
 
-export default function Category({ navigation }) {
+export default function Category() {
 
     const route = useRoute();
-    console.log(route)
-    console.log(route.params)
-
     const category = route.params.category
 
+    // displaying each card
     const card = data.map(item => (<Card
         key={item.id}
         item={item}
     />))
 
 
-    //console.log(card[0].props.item.type)
+    // function that displays appropriate cards that match with the category
     function activity() {
         for (let i = 0; i < 7; ++i) {
-            console.log(card[i].props.item.type)
-            console.log(category.activityName)
+            //console.log(card[i].props.item.type)
+            //console.log(category.activityName)
             if (card[i].props.item.type == category.activityName) {
-                console.log(card[i].props.item.title)
-                console.log("It is water activity")
+                //console.log(card[i].props.item.title)
+                //console.log("It is water activity")
                 return card[i]
             }
         }
     }
-
 
 
     return (
@@ -45,7 +49,7 @@ export default function Category({ navigation }) {
     )
 }
 
-
+// styling
 const styles = StyleSheet.create({
 
     categories: {
